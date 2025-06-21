@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok } from 'react-icons/fa'
+import ProgramsCarousel from './ProgramsCarousel'  
 
 export default function Home() {
   return (
@@ -10,15 +11,15 @@ export default function Home() {
 
       {/* Navbar */}
       <nav className="relative bg-blue-950 text-white p-4 flex items-center justify-between">
-        
         {/* Left: Logo */}
         <div className="flex items-center">
-          <Image 
-  src="/logo.png" 
-  alt="Logo"  
-  width={100}  
-  height={100}  
-  className="rounded ml-4" ></Image>
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="rounded ml-4"
+          />
         </div>
 
         {/* Center: Navigation links */}
@@ -38,8 +39,11 @@ export default function Home() {
       {/* Hero Image */}
       <div className="relative w-screen h-[500px]">
         <Image src="/777.jpg" alt="Banner" fill className="object-cover" />
-        <div className="absolute inset-0  bg-opacity-50 flex items-center justify-center ">
-          <h1 className="text-black text-4xl font-bold text-center px-4">Welcome to the Future of AI & Robotics</h1>
+        <div className="absolute inset-0 bg-opacity-50 flex items-center justify-center">
+          <p className="text-purple-800 text-3xl font-semibold text-center max-w-3xl mr-10 drop-shadow-[0_0_3px_#888] drop-shadow-[0_0_6px_#ccc]">
+            Welcome to IAIR CAMPUS<br />
+            where future innovators in Artificial Intelligence and Robotics are trained with both theoretical and practical experience.
+          </p>
         </div>
       </div>
 
@@ -63,26 +67,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Diploma Certificates Section */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold text-white text-center mb-10">Explore Our Programs</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {[
-            { src: '/ai.jpg', title: 'Certificate in AI' },
-            { src: '/r.png', title: 'Certificate in Robotics' },
-            { src: '/pr.jpg', title: 'Project Management with AI' },
-            { src: '/j.jpg', title: 'Certificate in Java' },
-            { src: '/p.jpg', title: 'Certificate in Python' },
-          ].map((program, i) => (
-            <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden relative">
-              <Image src={program.src} alt={program.title} width={300} height={200} className="w-full h-48 object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-2 text-center">
-                <h3 className="text-white text-sm font-semibold">{program.title}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Diploma Certificates Section (Carousel) */}
+      <ProgramsCarousel />
 
       {/* Footer */}
       <footer className="bg-gradient-to-b bg-black text-white">
@@ -123,7 +109,6 @@ export default function Home() {
           © 2025 AI Robotics Hub. All rights reserved.
         </div>
       </footer>
-
     </div>
   )
 }
