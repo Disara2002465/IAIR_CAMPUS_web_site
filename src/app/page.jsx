@@ -2,15 +2,15 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok } from 'react-icons/fa'
-import ProgramsCarousel from './ProgramsCarousel'  
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok,FaWhatsapp  } from 'react-icons/fa'
+import ProgramsCarousel from './ProgramsCarousel'  // Adjust the path if needed
 
 export default function Home() {
   return (
     <div className="bg-blue-950 min-h-screen flex flex-col">
 
       {/* Navbar */}
-      <nav className="relative bg-blue-950 text-white p-4 flex items-center justify-between">
+      <nav className="relative bg-black text-white p-4 flex items-center justify-between">
         {/* Left: Logo */}
         <div className="flex items-center">
           <Image
@@ -36,16 +36,24 @@ export default function Home() {
         </Link>
       </nav>
 
-      {/* Hero Image */}
-      <div className="relative w-screen h-[500px]">
-        <Image src="/777.jpg" alt="Banner" fill className="object-cover" />
-        <div className="absolute inset-0 bg-opacity-50 flex items-center justify-center">
-          <p className="text-purple-800 text-3xl font-semibold text-center max-w-3xl mr-10 drop-shadow-[0_0_3px_#888] drop-shadow-[0_0_6px_#ccc]">
-            Welcome to IAIR CAMPUS<br />
-            where future innovators in Artificial Intelligence and Robotics are trained with both theoretical and practical experience.
-          </p>
-        </div>
-      </div>
+      {/* Hero Image 1 */}
+     <div className="relative w-screen h-[600px]">
+  <Image
+    src="/arm.jpg"
+    alt="Banner 1"
+    fill
+    className="object-cover object-top"
+  />
+  <div className="absolute inset-0 bg-opacity-50 flex items-center justify-center">
+    <p className="text-red-700 text-4xl font-semibold text-center max-w-4xl mr-10 drop-shadow-[0_0_3px_#888] drop-shadow-[0_0_6px_#ccc]underline decoration-yellow-400 decoration-4 underline-offset-4">
+      Welcome to IAIR CAMPUS<br />
+      where future innovators in Artificial Intelligence and Robotics are trained with both theoretical and practical experience.
+    </p>
+  </div>
+</div>
+
+
+     
 
       {/* Vision & Mission */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
@@ -74,7 +82,7 @@ export default function Home() {
       <footer className="bg-gradient-to-b bg-black text-white">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between p-8">
           <div className="min-w-[250px] mb-6">
-            <Image src="/logo.png" alt="Zahara Gems Logo" width={250} height={100} className="mb-4 ml-4" />
+            <Image src="/logo.png" alt="IAIR Campus Logo" width={250} height={100} className="mb-4 ml-4" />
           </div>
           <div className="min-w-[180px] mb-6">
             <h3 className="font-semibold text-lg mb-4">Easy Navigation</h3>
@@ -84,10 +92,21 @@ export default function Home() {
             <Link href="/gallery" className="block hover:text-yellow-400 mb-2">Gallery</Link>
           </div>
           <div className="min-w-[180px] mb-6">
-            <h3 className="font-semibold text-lg mb-4">Information</h3>
-            <Link href="#" className="block hover:text-yellow-400 mb-2">Terms & Conditions</Link>
-            <Link href="#" className="block hover:text-yellow-400 mb-2">Privacy Policies</Link>
-            <Link href="#" className="block hover:text-yellow-400 mb-2">Other Policies</Link>
+           
+            
+            <div className="min-w-[180px] mb-6">
+  <h3 className="font-semibold text-lg mb-4">Privacy Policies</h3>
+  <Link href="/privacy-policy" className="block hover:text-yellow-400 mb-2">
+    Privacy Policy
+  </Link>
+  <Link href="/cookie-policy" className="block hover:text-yellow-400 mb-2">
+    Cookie Policy
+  </Link>
+  <Link href="/data-protection" className="block hover:text-yellow-400 mb-2">
+    Data Protection
+  </Link>
+</div>
+            
           </div>
           <div className="min-w-[180px] mb-6">
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
@@ -103,12 +122,19 @@ export default function Home() {
           <Link href="#" className="text-orange-400 border-2 border-orange-400 p-3 rounded-full text-xl hover:bg-orange-500 hover:text-white transition"><FaInstagram /></Link>
           <Link href="#" className="text-orange-400 border-2 border-orange-400 p-3 rounded-full text-xl hover:bg-orange-500 hover:text-white transition"><FaLinkedinIn /></Link>
           <Link href="#" className="text-orange-400 border-2 border-orange-400 p-3 rounded-full text-xl hover:bg-orange-500 hover:text-white transition"><FaTiktok /></Link>
+          <Link
+  href="#"
+  className="text-orange-400 border-2 border-orange-400 p-3 rounded-full text-xl hover:bg-orange-500 hover:text-white transition"
+>
+  <FaWhatsapp />
+</Link>
         </div>
 
         <div className="bg-yellow-400 text-[#0e2b56] text-center py-3 font-medium">
-          © 2025 AI Robotics Hub. All rights reserved.
+          © 2025 Copy Rights to IAIR CAMPUS. All rights reserved.
         </div>
       </footer>
+
     </div>
   )
 }
